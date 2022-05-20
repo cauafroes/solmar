@@ -11,6 +11,7 @@ wp-content/*
 # ignore these plugins
 wp-content/plugins/hello.php
 
+.DS_Store
 # ignore specific themes
 wp-content/themes/twenty*/
 

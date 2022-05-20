@@ -4,6 +4,7 @@
 #include <WebSocketsServer.h>
 
 // Constants
+//mude para o seu wifi e a sua senha
 const char *ssid = "esp";
 const char *password =  "12341234";
 const int dns_port = 53;

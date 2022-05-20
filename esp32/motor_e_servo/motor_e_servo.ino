@@ -5,6 +5,7 @@
 #include <ESP32Servo.h>
 
 // Constants
+//mudar para o nome de seu wifi e a sua senha
 const char *ssid = "esp";
 const char *password =  "12341234";
 const int dns_port = 53;
@@ -97,6 +98,11 @@ void moverRobo(){
     velocidademotor2 = velocidademotor2 * diff;
   }
   */
+  Serial.print("velocidade motor 1: ");
+  Serial.print(velocidademotor1);
+
+  //Serial.print("  2: ");
+  //Serial.println(velocidademotor2);
 
   diff = map(pot_x,-100, 100, 0, 180);
   servo.write(diff);
