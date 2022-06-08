@@ -21,14 +21,15 @@ const int ws_port = 1337;
   const int enable1Pin = 14;
   const int servoPin = 12;
 #else
-  const int motor1Pin1 = D5; 
-  const int motor1Pin2 = D6; 
-  const int enable1Pin = D7;
-  const int servoPin = D2;
+  const int motor1Pin1 = 14; 
+  const int motor1Pin2 = 12; 
+  const int enable1Pin = 13;
+  const int servoPin = 4;
 #endif
 
 //servo
 Servo servo;
+int diff;
 
 // tempo atual
 unsigned long currentTime = millis();
@@ -74,6 +75,7 @@ void moverRobo(){
   
   diff = map(pot_x,-100, 100, 0, 180);
   servo.write(diff);
+  analogWrite(enable1Pin, velocidademotor);
 }
 
 // Callback: receiving any WebSocket message
