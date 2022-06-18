@@ -4,7 +4,7 @@
 #ifdef ESP32
   #include <Wifi.h>
 #else
-  #include <ESP8266Wifi.h>
+  #include <ESP8266WiFi.h>
 #endif
 
 //mudar para o nome de seu wifi e a sua senha
@@ -63,13 +63,15 @@ void moverRobo(){
   }
   else if (pot_y > 0) {
     digitalWrite(motor1Pin1, LOW);
-    digitalWrite(motor1Pin2, HIGH);;
+    digitalWrite(motor1Pin2, HIGH);
     
     // converte o valor do joystick para o valor correto para a ponte H
     velocidademotor = map(pot_y, 10, 100, 150, 255);
   }
     //Faz com que o motor fique parado caso o joystick esteja centralizado
     else {
+    digitalWrite(motor1Pin1, HIGH);
+    digitalWrite(motor1Pin2, HIGH);
     velocidademotor = 0;
   }
   
